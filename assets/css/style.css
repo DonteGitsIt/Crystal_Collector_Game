@@ -1,0 +1,43 @@
+body{
+    background-image: url("../images/connectwork.png");
+    color:white;
+}
+img{
+    width: 100px;
+    height: 100px;
+    
+}
+#title{
+    background: brown;
+}
+
+#instructions{
+    color: green;
+    background: tan;
+    padding-bottom: 40px;
+}
+
+#number-to-guess{
+    margin-right: 10px;
+    font-size: 30px;
+    color:red;
+    background:green;
+}
+#wins-losses{
+    color:black;
+    background: lightskyblue;
+}
+
+.total{
+    background: darkcyan;
+}
+
+#current-total{
+    font-size:30px;
+    color: burlywood;
+}
+
+#total-box{
+    margin-top: 10px;
+    padding-bottom:100px;
+}
