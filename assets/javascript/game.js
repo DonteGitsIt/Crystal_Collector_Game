@@ -35,8 +35,11 @@ $(document).ready(function() {
     //adds value of clicked crystal button to users total score
     $(".crystalButton").on('click', function(){
         var valueString = ''
+        //sets value string of clicked crystal equal to this variable
         valueString = $(this).attr("value")
+        //takes said string and turns it into a number
         valueString = parseInt(valueString)
+        //adds valueString (now a number) to users total then updates text on page
         currentTotal = currentTotal + valueString
         totalText.textContent = currentTotal
         //checks if user won or lost with each click of a crystal
