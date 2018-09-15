@@ -6,24 +6,17 @@ $(document).ready(function() {
     var currentTotal = 0
     var crystalNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-    var winsText = document.getElementById("wins")
-    var lossesText = document.getElementById("losses")
-    var comNumberText = document.getElementById("comNumber")
-    var totalText = document.getElementById("current-total")
-    var congratsText = document.getElementById("congrats-text")
-
-    winsText.textContent = wins
-    lossesText.textContent = losses
-    comNumberText.textContent = comNumber
-    totalText.textContent = currentTotal
-    
+    $('#wins').text(wins)
+    $('#losses').text(losses)
+    $('#comNumber').text(comNumber)
+    $('#current-total').text(currentTotal)
     
     // function that need to be run everytime user wins or loses.
     function newGame(){
         comNumber = Math.floor(Math.random() * 120) + 19
         currentTotal = 0
-        comNumberText.textContent = comNumber
-        totalText.textContent = currentTotal
+        $('#comNumber').text(comNumber)
+        $('#current-total').text(currentTotal)
 
         // assigns a random value from crystalNumbers array to each crystal button
         $(".crystalButton").each(function(){
@@ -41,17 +34,17 @@ $(document).ready(function() {
         valueString = parseInt(valueString)
         //adds valueString (now a number) to users total then updates text on page
         currentTotal = currentTotal + valueString
-        totalText.textContent = currentTotal
+        $('#current-total').text(currentTotal)
         //checks if user won or lost with each click of a crystal
         if(currentTotal === comNumber){
             wins++
-            winsText.textContent = wins
-            congratsText.textContent = ("You won!!")
+            $('#wins').text(wins)
+            $('#congrats-text').text('You Won!!!')
             newGame()
         }else if(currentTotal > comNumber){
             losses++
-            lossesText.textContent = losses
-            congratsText.textContent = ("You lose!!")
+            $('#losses').text(losses)
+            $('#congrats-text').text('You Lose!!!')
             newGame()
         }
     })
